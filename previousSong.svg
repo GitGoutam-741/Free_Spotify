@@ -1,0 +1,9 @@
+<svg class="hgi hgi-solid hgi-sharp hgi-previous" xmlns="http://www.w3.org/2000/svg"
+     width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="Previous">
+  <!-- right vertical bar -->
+  <rect x="20" y="5" width="2" height="14" fill="currentColor"/>
+  <!-- right-pointing triangle mirrored to left -->
+  <polygon points="18,5 9,12 18,19" fill="currentColor"/>
+  <!-- left triangle -->
+  <polygon points="12,5 3,12 12,19" fill="currentColor"/>
+</svg>
