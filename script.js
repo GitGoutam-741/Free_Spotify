@@ -3,7 +3,7 @@ console.log("Lets start some JS")
 let currentsong = new Audio();
 async function getsongs() {
 
-    let a = await fetch("http://127.0.0.1:5501/songs/")
+    let a = await fetch("http://127.0.0.1:5501/music/")
     let response = await a.text();
     console.log(response)
     let div = document.createElement("div")
@@ -13,7 +13,7 @@ async function getsongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1])
+            songs.push(element.href.split("/music/")[1])
         }
     }
     return songs
@@ -21,7 +21,7 @@ async function getsongs() {
 
 const playmusic = (track,pause=false) => {
     // let audio=new Audio("/songs/" + track)
-    currentsong.src = "/songs/" + track
+    currentsong.src = "/music/" + track
     if (!pause) {
         currentsong.play()
         play.src = "pause.svg"
