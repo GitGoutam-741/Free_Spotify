@@ -13,7 +13,7 @@ async function getsongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/music/")[1])
+            songs.push(element.href.split("/music/")[1])     // CHANGE MUSIC
         }
     }
     return songs
@@ -21,7 +21,7 @@ async function getsongs() {
 
 const playmusic = (track,pause=false) => {
     // let audio=new Audio("/songs/" + track)
-    currentsong.src = "/music/" + track
+    currentsong.src = "http://127.0.0.1:5501/music/" + track
     if (!pause) {
         currentsong.play()
         play.src = "pause.svg"
@@ -42,12 +42,12 @@ async function main() {
 
 
     //get the list of all the songs
-    let songs = await getsongs()
-    playmusic(songs[0],true)
+    let music = await getsongs()         // CHANGE MUSIC
+    playmusic(music[0],true)    // CHANGE MUSIC
 
     // show all the song in the playlist
     let songUL = document.querySelector(".songslist").getElementsByTagName("ul")[0]
-    for (const song of songs) {
+    for (const song of music) {     // CHANGE MUSIC
         songUL.innerHTML = songUL.innerHTML + `<li><div class="micon border ">🎵</div>
                             <div class="info ">
                                 <div class="sname" >${song.replaceAll("%20", " ")}</div>
